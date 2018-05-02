@@ -79,6 +79,21 @@ class Match
      */
     private $penSelB;
 
+    /**
+     * @ORM\Column(type="string", length=7, nullable=true)
+     */
+    private $undefinedMatchKey;
+
+    /**
+     * @ORM\Column(type="string", length=3, nullable=true)
+     */
+    private $winnerKey;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $idNextMatch;
+
     public function getId()
     {
         return $this->id;
@@ -224,6 +239,42 @@ class Match
     public function setPenSelB(?int $penSelB): self
     {
         $this->penSelB = $penSelB;
+
+        return $this;
+    }
+
+    public function getUndefinedMatchKey(): ?string
+    {
+        return $this->undefinedMatchKey;
+    }
+
+    public function setUndefinedMatchKey(?string $undefinedMatchKey): self
+    {
+        $this->undefinedMatchKey = $undefinedMatchKey;
+
+        return $this;
+    }
+
+    public function getWinnerKey(): ?string
+    {
+        return $this->winnerKey;
+    }
+
+    public function setWinnerKey(?string $winnerKey): self
+    {
+        $this->winnerKey = $winnerKey;
+
+        return $this;
+    }
+
+    public function getIdNextMatch(): ?int
+    {
+        return $this->idNextMatch;
+    }
+
+    public function setIdNextMatch(?int $idNextMatch): self
+    {
+        $this->idNextMatch = $idNextMatch;
 
         return $this;
     }
