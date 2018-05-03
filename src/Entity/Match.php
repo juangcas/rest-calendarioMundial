@@ -5,7 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\GameRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MatchRepository")
  */
 class Match
 {
@@ -19,7 +19,7 @@ class Match
     /**
      * @ORM\Column(type="datetime")
      */
-    private $dateHour;
+    private $dayHr;
 
     /**
      * @ORM\Column(type="string", length=20)
@@ -99,14 +99,14 @@ class Match
         return $this->id;
     }
 
-    public function getDateHour(): ?\DateTimeInterface
+    public function getDayHr(): ?\DateTimeInterface
     {
-        return $this->dateHour;
+        return $this->dayHr;
     }
 
-    public function setDateHour(\DateTimeInterface $dateHour): self
+    public function setDayHr(\DateTimeInterface $dayHr): self
     {
-        $this->dateHour = $dateHour;
+        $this->dayHr = $dayHr;
 
         return $this;
     }
